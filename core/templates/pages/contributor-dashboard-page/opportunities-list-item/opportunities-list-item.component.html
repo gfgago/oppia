@@ -55,6 +55,18 @@
       </span>
     </div>
   </div>
+  <div class="oppia-profile-details-container">
+    <picture *ngIf="profilePicturePngDataUrl">
+      <source type="image/webp" [srcset]="profilePictureWebpDataUrl">
+      <source type="image/png" [srcset]="profilePicturePngDataUrl">
+      <img [src]="profilePicturePngDataUrl"
+           class="rounded-circle"
+           alt="User Avatar">
+    </picture>
+    <span *ngIf="!profilePicturePngDataUrl" ngbTooltip="User translated">
+      <i class="fas fa-user-circle oppia-profile-picture-icon"></i>
+    </span>
+  </div>
 </ng-template>
 
 <ng-template #OpportunitiesDetails>
